@@ -12,7 +12,7 @@
     %script{:crossorigin => "anonymous", :integrity => "sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=", :src => "https://code.jquery.com/jquery-3.3.1.js"}
   %nav
     .nav-wrapper
-      %a.brand-logo{:href => "#"} blogさん
+      %a.brand-logo{:href => "/"} blogさん
       %ul#nav-mobile.right.hide-on-med-and-down.abc
         - if user_signed_in? then
           %li
