@@ -1,0 +1,57 @@
+@import "./reset";
+
+.nav-wrapper {
+  text-align: center;
+}
+.abc {
+
+}
+
+.brand-logo {
+  font-weight: bold;
+}
+
+.content_post {
+	opacity: 0.7;
+	margin: 10px auto;
+	height: 500px;
+	width: 80%;
+	border: 3px dotted #666666;
+    padding: 5px;
+  &__title {
+  	margin: 20px;
+  	text-align: center;
+  	font-size: 30px;
+  	font-style: bold;
+  }
+  &__text {
+  	font-size: 15px;
+  	padding-top: 10px;
+  	padding-right: 20px;
+  	padding-bottom: 20px;
+  	padding-left: 20px; 
+  }
+}
+
+.write_form {
+	margin: 10px auto;
+	height: 300px;
+	width: 80%;
+	border: 10px;
+	background-color: #fff;
+}
+
+.contents.row {
+	margin-top: 200px;
+	margin-left: 50%;
+	margin-right: 50%;
+	height: 300px;
+	width: 80%;
+}
+
+.footer {
+	text-align: center;
+	font-size: 10px;
+	color: #808080;
+	margin: 20px;
+}
