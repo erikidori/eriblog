@@ -1,0 +1,42 @@
+!!!
+%html
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %title eriblog♡
+    %style{:href => "./style.css", :type => "text/css"}
+    / Compiled and minified CSS
+    %link{:href => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css", :rel => "stylesheet"}/
+    / Compiled and minified JavaScript
+    %script{:src => "https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=", :src => "https://code.jquery.com/jquery-3.3.1.js"}
+    %script{:crossorigin => "anonymous", :integrity => "sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=", :src => "https://code.jquery.com/jquery-3.3.1.js"}
+  %nav
+    .nav-wrapper
+      %a.brand-logo{:href => "/"} blogさん
+      %ul#nav-mobile.right.hide-on-med-and-down.abc
+        - if user_signed_in? then
+          %li
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+          %li
+            %a.post{:href => "/blogs/new"} 投稿する
+        - else
+          %li
+            = link_to "ログイン", new_user_session_path, class: 'post'
+          %li
+            = link_to "新規登録", new_user_registration_path, class: 'post'
+
+  %script{:src => "./app.js", :type => "text/javascript"}
+
+
+
+  %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+
+  = csrf_meta_tags
+  = csp_meta_tag
+  = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload'
+  = javascript_include_tag 'application', 'data-turbolinks-track': 'reload'
+  %body
+    = yield
+
+  %footer 
+    .footer Copyright blog-san 2018.
